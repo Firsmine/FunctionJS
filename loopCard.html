@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop Card</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      const DATA = [
+        {
+          id: 1,
+          nama: "Ini Nama",
+          kelas: "XI",
+          jurusan: "RPL",
+        },
+        {
+          id: 2,
+          nama: "Nama",
+          kelas: "XI",
+          jurusan: "RPL",
+        },
+        {
+          id: 3,
+          nama: "Ini Juga Nama",
+          kelas: "XI",
+          jurusan: "RPL",
+        },
+        {
+          id: 4,
+          nama: "Ini Nama Juga",
+          kelas: "XI",
+          jurusan: "RPL",
+        },
+        {
+          id: 5,
+          nama: "Nama Ini",
+          kelas: "XI",
+          jurusan: "RPL",
+        },
+        {
+          id: 6,
+          nama: "Ini Namanya Nama",
+          kelas: "XI",
+          jurusan: "RPL",
+        },
+      ];
+
+      function renderData(items) {
+        let html = "";
+        if (items.length === 0) {
+          html = `<p>Data tidak ditemukan</p>`;
+        } else {
+          items.forEach((i) => {
+            html += `
+              <div class='item'>
+                <h3>${i.nama}</h3>
+                <h4>${i.kelas}</h4>
+                <p>${i.jurusan}</p>
+              </div>
+            `;
+          });
+        }
+        container.innerHTML = html;
+      }
+      renderData(DATA);
+    </script>
+  </body>
+</html>
